@@ -1,0 +1,17 @@
+# python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# env
+.env
+config/secrets/
+
+# conda
+*.conda
+.envs/
+
+# data
+data/raw/*
+data/processed/*
