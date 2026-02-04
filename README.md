@@ -1,5 +1,4 @@
 # OCR Receipt Pipeline (Reference Implementation)
-
 This repository provides a reference implementation of an
 end-to-end OCR receipt processing pipeline.
 
@@ -12,6 +11,9 @@ end-to-end OCR receipt processing pipeline.
 - Establish a reproducible baseline pipeline
 - Serve as a reference for OCR engine comparison
 - Not a finalized production standard
+
+This repository intentionally prioritizes structural clarity and reproducibility
+over completeness of OCR or LLM integrations.
 
 ## Python Environment
 - Primary compatibility target: Python 3.10.x
@@ -29,3 +31,16 @@ within the supported range.
 ## Status
 - Active development
 - Intended to be mirrored into team repositories after agreement
+
+## Repository Structure
+The repository is organized to clearly separate a lightweight reference pipeline
+from experimental or dependency-heavy implementations.
+
+```text
+src/
+  pipeline/
+    run.py               # Reference smoke pipeline (OCR-free)
+  legacy/
+    full_pipeline.py     # Full pipeline including OCR and optional LLM fallback
+  ocr/
+    engine.py            # Pluggable OCR engine implementations
