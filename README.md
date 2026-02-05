@@ -33,14 +33,12 @@ within the supported range.
 - Intended to be mirrored into team repositories after agreement
 
 ## Repository Structure
-The repository is organized to clearly separate a lightweight reference pipeline
-from experimental or dependency-heavy implementations.
 
 ```text
 src/
   pipeline/
-    run.py               # Reference smoke pipeline (OCR-free)
-  legacy/
-    full_pipeline.py     # Full pipeline including OCR and optional LLM fallback
+    run.py        # Reference pipeline execution (ends at draft)
+    draft.py      # Pipeline output → human-reviewable draft
   ocr/
-    engine.py            # Pluggable OCR engine implementations
+    adapter.py   # OCR adapter interface
+    easyocr_adapter.py  # Minimal example adapter (output discarded)
