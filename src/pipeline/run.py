@@ -1,25 +1,22 @@
-def run_pipeline(input_path: str) -> dict:
+from src.pipeline.draft import to_receipt_draft
+
+
+def run_pipeline(image_path: str) -> dict:
     """
-    Minimal end-to-end pipeline smoke test.
-    OCR engine is intentionally mocked / skipped.
+    Reference pipeline execution.
+
+    This pipeline intentionally skips actual OCR execution and
+    produces a human-reviewable draft output.
     """
 
-    # Mock OCR output
-    ocr_result = {
-        "text": "DUMMY OCR TEXT",
-        "confidence": 0.0,
+    pipeline_result = {
+        "image_path": image_path,
+        "items": [],
+        "totals": {"candidates": []},
+        "validation": {"status": "AMBIGUOUS"},
     }
 
-    # Mock normalize / parse
-    parsed = {
-        "status": "AMBIGUOUS",
-        "candidates": [],
-    }
-
-    return {
-        "input": input_path,
-        "result": parsed,
-    }
+    return to_receipt_draft(pipeline_result)
 
 
 if __name__ == "__main__":

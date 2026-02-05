@@ -1,6 +1,6 @@
 from google.cloud import vision
 
-class GoogleVisionOCREngine:
+class GoogleVisionLegacyEngine:
     def __init__(self):
         self.client = vision.ImageAnnotatorClient()
 
