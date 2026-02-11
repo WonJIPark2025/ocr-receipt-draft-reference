@@ -72,3 +72,14 @@ docs/
     03_parsed_items.md
     04_validation.md
     05_receipt_draft.md
+```
+
+---
+
+## Contracts & Metrics
+
+The following documents define persistence boundaries and operational monitoring:
+
+- [Draft → DB Contract](docs/contracts/draft_to_db.md)
+- [Draft Status Metrics](docs/metrics/draft_status_metrics.md)
+
